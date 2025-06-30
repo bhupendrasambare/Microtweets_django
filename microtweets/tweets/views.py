@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
-def index(request):
+def tweet_home(request):
     return render(request, 'index.html')
 
 def get_tweets(request):
