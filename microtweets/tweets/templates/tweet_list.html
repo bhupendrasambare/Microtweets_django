@@ -1,31 +1,17 @@
-<div class="content-body">
+<div class="">
     <div class="container">
         <div class="row">
             <main class="col-md-8">
-                <article class="post post-1">
-                    <div class="entry-content clearfix">
-                        <p>Responsive web design offers us a way forward, finally allowing us to design for the ebb and flow of things.
-                            There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,
-                            by injected humour, or randomised words which don’t look even slightly.
-
-                        <div class="read-more cl-effect-14">
-                            <a href="single.html" class="more-link">Continue reading <span class="meta-nav">→</span></a>
-                        </div>
-                        </p>
-
-                        <header class="">
-                            <div class="fs-sm">
-                                <span class="post-category fs-sm"><a href="#">Web Design</a></span>
-
-                                <span class="post-date"><a href="#"><time class="entry-date" datetime="2012-11-09T23:15:57+00:00">February 2, 2013</time></a></span>
-
-                                <span class="post-author"><a href="#">Albert Einstein</a></span>
-
-                                <span class="comments-link"><a href="#">4 Comments</a></span>
-                            </div>
-                        </header>
-                    </div>
-                </article>
+                <div class=" scrollable-column bg-white p-3"
+                     style="height: calc(100vh - 70px);overflow-y: auto;scrollbar-width: none;-ms-overflow-style: none;">
+                    {% include "articel.html" %}
+                    {% include "articel.html" %}
+                    {% include "articel.html" %}
+                    {% include "articel.html" %}
+                    {% include "articel.html" %}
+                    {% include "articel.html" %}
+                    {% include "articel.html" %}
+                </div>
             </main>
             <aside class="col-md-4">
                 <div class="widget widget-recent-posts">
@@ -46,10 +32,10 @@
                     <h3 class="widget-title">Archives</h3>
                     <ul>
                         <li>
-                            <a href="#">November 2014</a>
+                            <a href="#" >November 2014</a>
                         </li>
                         <li>
-                            <a href="#">September 2014</a>
+                            <a href="#" >September 2014</a>
                         </li>
                         <li>
                             <a href="#">January 2013</a>
@@ -59,17 +45,17 @@
 
                 <div class="widget widget-category">
                     <h3 class="widget-title">Category</h3>
-                    <ul>
-                        <li>
-                            <a href="#">Web Design</a>
-                        </li>
-                        <li>
-                            <a href="#">Web Development</a>
-                        </li>
-                        <li>
-                            <a href="#">SEO</a>
-                        </li>
-                    </ul>
+                    <div  class="d-flex flex-wrap" style="width:300px">
+                        <p> <a href="#" class="rounded-pill shadow-sm p-2 text-decoration-none">Web Design</a></p>
+                        <p><a href="#" class="rounded-pill shadow-sm p-2 text-decoration-none">Web Development</a></p>
+                        <p><a href="#" class="rounded-pill shadow-sm p-2 text-decoration-none">SEO</a></p>
+                        <p> <a href="#" class="rounded-pill shadow-sm p-2 text-decoration-none">Web Design</a></p>
+                        <p><a href="#" class="rounded-pill shadow-sm p-2 text-decoration-none">Web Development</a></p>
+                        <p><a href="#" class="rounded-pill shadow-sm p-2 text-decoration-none">SEO</a></p>
+                        <p> <a href="#" class="rounded-pill shadow-sm p-2 text-decoration-none">Web Design</a></p>
+                        <p><a href="#" class="rounded-pill shadow-sm p-2 text-decoration-none">Web Development</a></p>
+                        <p><a href="#" class="rounded-pill shadow-sm p-2 text-decoration-none">SEO</a></p>
+                    </div>
                 </div>
             </aside>
         </div>
