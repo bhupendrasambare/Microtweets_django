@@ -7,6 +7,45 @@ Tweets - Add Tweets
 {%  block content %}
 {% include "navbar.html" %}
 
+<div class="container mt-5">
+    <form method="POST" action="/save" enctype="multipart/form-data">
+      <div id="editor" style="height: 200px;"></div>
+      <input type="hidden" name="text" id="content">
 
+      <div class="mb-3 mt-3 col-sm-3">
+        <label for="photo" class="form-label">Upload Image</label>
+        <input type="file" name="photo" id="photo" class="form-control" accept="image/*" onchange="previewImage(event)">
+      </div>
 
+      <div class="mb-3">
+        <img id="image-preview" src="#" alt="Image preview" style="max-height: 250px; display: none;" class="img-thumbnail">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Add Tweet</button>
+    </form>
+</div>
+
+<!-- Scripts -->
+<script>
+  const quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+
+  document.querySelector('form').onsubmit = function () {
+    document.querySelector('#content').value = quill.root.innerHTML;
+  };
+
+  function previewImage(event) {
+    const file = event.target.files[0];
+    const preview = document.getElementById('image-preview');
+
+    if (file && file.type.startsWith('image/')) {
+      preview.src = URL.createObjectURL(file);
+      preview.style.display = 'block';
+    } else {
+      preview.src = '#';
+      preview.style.display = 'none';
+    }
+  }
+</script>
 {% endblock %}
