@@ -8,7 +8,8 @@ Tweets - Add Tweets
 {% include "navbar.html" %}
 
 <div class="container mt-5">
-    <form method="POST" action="/save" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
       <div id="editor" style="height: 200px;"></div>
       <input type="hidden" name="text" id="content">
 
