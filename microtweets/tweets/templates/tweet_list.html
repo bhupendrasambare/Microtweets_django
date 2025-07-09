@@ -5,7 +5,7 @@
                 <div class=" scrollable-column bg-white p-3"
                      style="height: calc(100vh - 70px);overflow-y: auto;scrollbar-width: none;-ms-overflow-style: none;">
                     {% for tweet in tweets %}
-                        {% include "articel.html" %}
+                        {% include "articel.html" with tweet=tweet index=forloop.counter %}
                     {% endfor %}
                 </div>
             </main>
