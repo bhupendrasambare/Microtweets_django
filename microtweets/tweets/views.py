@@ -5,10 +5,10 @@ from django.shortcuts import get_object_or_404
 
 # Create your views here.
 
-def tweet_home(request):
-    return render(request, 'index.html')
+# def tweet_home(request):
+#     return render(request, 'index.html')
 
-def get_tweets(request):
+def tweet_home(request):
     tweets = Tweet.objects.all().order_by('-created_at')
     return render(request, 'tweets.html',{'tweets':tweets})
 
@@ -19,7 +19,7 @@ def save_tweets(request):
             tweet = form.save(commit = False)
             tweet.user = request.user
             tweet.save()
-            return redirect('get_tweets')
+            return redirect('tweet_home')
     else:
         form = TweetForm()
     return render(request, 'tweet_form.html', {'form':form})
@@ -32,7 +32,7 @@ def tweet_edit(request, tweet_id):
             tweet = form.save(commit=False)
             tweet.user = request.user
             tweet.save()
-            return redirect('get_tweets')
+            return redirect('tweet_home')
     else:
         form = TweetForm(instance= tweet)
     return render(request, 'tweet_form.html', {'form': form})
@@ -42,4 +42,4 @@ def tweet_delete(request, tweet_id):
     if request.method == "DELETE":
         tweet.is_deleted = True
         tweet.save()
-    return redirect('get_tweets')
+    return redirect('tweet_home')
